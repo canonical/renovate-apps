@@ -1,0 +1,21 @@
+{
+    "extends": [
+        "github>canonical/renovate-websites", "schedule:monthly"
+    ],
+    "packageRules": [
+        {
+            "groupName": "internal dependencies",
+            "groupSlug": "internal",
+            "packagePatterns": [
+                "^@canonical",
+                "^canonicalwebteam",
+                "^vanilla-framework"
+            ],
+            "schedule": ["at any time"]
+        },
+        {
+            "depTypeList": ["devDependencies"],
+            "extends": [":automergeMinor"]
+        }
+    ]
+}
